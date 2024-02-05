@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-// !import later code viewer
+import './widgets/scaffold.dart';
+import 'codes/scaffold_code.dart';
 
 void main() => runApp(const MaterialApp(
       title: "Flutter Learn App",
@@ -7,7 +8,7 @@ void main() => runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,
     ));
 
-// ^ explain later: stf and stl
+// TODO explain later: stf and stl
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,28 +30,36 @@ class _HomeScreenState extends State<HomeScreen> {
       // body like in html
       body: ListView(
         children: [
-          ListTile(
-            leading: Icon(Icons.favorite_outline),
-            title: TextButton(
-              child: Text('Hello',
-                  style: const TextStyle(decoration: TextDecoration.underline)),
-              onPressed: () {
-                print('Session clicked');
-              },
-            ),
-            trailing: TextButton(
-              child: Icon(Icons.code),
-              onPressed: () {
-                print('code clicked');
-              },
-            ),
-          ),
-          const Spacer(),
+          // item
+          const SizedBox(height: 34),
           ListTile(
             leading: const Icon(Icons.favorite_outline),
             title: TextButton(
-              child: const Text('Hello',
-                  style: const TextStyle(decoration: TextDecoration.underline)),
+                child: const Text('Scaffold'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ScaffoldTutorial(),
+                    ),
+                  );
+                }),
+            trailing: TextButton(
+              child: const Icon(Icons.code),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ScaffoldCode(),
+                  ),
+                );
+              },
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.favorite_outline),
+            title: TextButton(
+              child: const Text('Hello'),
               onPressed: () {
                 print('Session clicked');
               },
