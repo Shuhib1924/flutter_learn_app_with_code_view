@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
-import './widgets/scaffold.dart';
-import 'codes/scaffold_code.dart';
+import 'package:flutter_learn_app/widgets/centerTutorial.dart';
+import 'package:flutter_learn_app/widgets/scaffoldTutorial.dart';
+import 'package:flutter_learn_app/widgets/textTutorial.dart';
+import 'codes.dart';
+
+/*
+! convention
+1. everfile has the same class name
+*/
 
 void main() => runApp(const MaterialApp(
       title: "Flutter Learn App",
@@ -35,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ListTile(
             leading: const Icon(Icons.favorite_outline),
             title: TextButton(
-                child: const Text('Scaffold'),
+                child: const Text('Scaffold Tutorial'),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -59,15 +66,48 @@ class _HomeScreenState extends State<HomeScreen> {
           ListTile(
             leading: const Icon(Icons.favorite_outline),
             title: TextButton(
-              child: const Text('Hello'),
-              onPressed: () {
-                print('Session clicked');
-              },
-            ),
+                child: const Text('Text Tutorial'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const TextTutorial(),
+                    ),
+                  );
+                }),
             trailing: TextButton(
               child: const Icon(Icons.code),
               onPressed: () {
-                print('code clicked');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const TextCode(),
+                  ),
+                );
+              },
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.favorite_outline),
+            title: TextButton(
+                child: const Text('Center Tutorial'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const CenterTutorial(),
+                    ),
+                  );
+                }),
+            trailing: TextButton(
+              child: const Icon(Icons.code),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CenterCode(),
+                  ),
+                );
               },
             ),
           ),
