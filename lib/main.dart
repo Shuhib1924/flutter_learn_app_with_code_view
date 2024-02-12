@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_app/widgets/centerTutorial.dart';
+import 'package:flutter_learn_app/widgets/containerDecorationTutorial.dart';
+import 'package:flutter_learn_app/widgets/containerPadding.dart';
 import 'package:flutter_learn_app/widgets/scaffoldTutorial.dart';
 import 'package:flutter_learn_app/widgets/textTutorial.dart';
 import 'codes.dart';
@@ -24,6 +26,13 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+// class _HomeScreenState extends State<HomeScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const ContainerTutorial();
+//   }
+// }
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
@@ -31,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       //navbar
       appBar: AppBar(
-        title: const Text('Flutter Study Sessions with Codes'),
+        title: const SelectableText('Flutter Study Sessions with Codes'),
         centerTitle: true,
       ),
       // body like in html
@@ -39,6 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           // item
           const SizedBox(height: 34),
+          // scaffold
           ListTile(
             leading: const Icon(Icons.favorite_outline),
             title: TextButton(
@@ -63,6 +73,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+          // text
           ListTile(
             leading: const Icon(Icons.favorite_outline),
             title: TextButton(
@@ -87,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
+          // center
           ListTile(
             leading: const Icon(Icons.favorite_outline),
             title: TextButton(
@@ -106,6 +118,56 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => const CenterCode(),
+                  ),
+                );
+              },
+            ),
+          ),
+          // container decoration
+          ListTile(
+            leading: const Icon(Icons.favorite_outline),
+            title: TextButton(
+                child: const Text('Container Decoration Tutorial'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContainerDecorationTutorial(),
+                    ),
+                  );
+                }),
+            trailing: TextButton(
+              child: const Icon(Icons.code),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ContainerDecorationCode(),
+                  ),
+                );
+              },
+            ),
+          ),
+          // container padding
+          ListTile(
+            leading: const Icon(Icons.favorite_outline),
+            title: TextButton(
+                child: const Text('Container Padding Tutorial'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContainerPaddingTutorial(),
+                    ),
+                  );
+                }),
+            trailing: TextButton(
+              child: const Icon(Icons.code),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ContainerPaddingCode(),
                   ),
                 );
               },

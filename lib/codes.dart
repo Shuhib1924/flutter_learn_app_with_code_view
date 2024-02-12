@@ -133,3 +133,119 @@ class CenterTutorial extends StatelessWidget {
     );
   }
 }
+
+class ContainerDecorationCode extends StatelessWidget {
+  const ContainerDecorationCode({Key? key}) : super(key: key);
+  final containerDecoration_code = '''
+import 'package:flutter/material.dart';
+
+class ContainerDecorationTutorial extends StatelessWidget {
+  const ContainerDecorationTutorial({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const SelectableText('Container Decoration Tutorial'),
+      ),
+      body: Container(
+        // color: Colors.amber[500],
+        width: 100,
+        height: 100,
+        margin: const EdgeInsets.all(40),
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 5,
+            color: const Color.fromARGB(255, 79, 223, 171),
+          ),
+          color: Colors.amber[400],
+          borderRadius: const BorderRadius.all(
+            Radius.circular(20),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+''';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Text Code',
+        ),
+      ),
+      body: Center(
+        child: SelectableCodeView(
+          code: containerDecoration_code, // Code text
+          language: Language.DART, // Language
+          languageTheme: LanguageTheme.vscodeDark(), // Theme
+          fontSize: 14.0, // Font size
+          withZoom: true, // Enable/Disable zoom icon controls
+          withLinesCount: true, // Enable/Disable line number
+          expanded: true, // Enable/Disable container expansion
+        ),
+      ),
+    );
+  }
+}
+
+class ContainerPaddingCode extends StatelessWidget {
+  const ContainerPaddingCode({Key? key}) : super(key: key);
+  final containerPadding_code = '''
+import 'package:flutter/material.dart';
+
+class ContainerPaddingTutorial extends StatelessWidget {
+  const ContainerPaddingTutorial({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Container Padding Tutorial'),
+      ),
+      body: Container(
+        height: 200.0,
+        width: 200.0,
+        color: Colors.orange[500],
+        child: Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              color: Colors.orange[200],
+            )),
+      ),
+    );
+  }
+}
+
+
+''';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Text Code',
+        ),
+      ),
+      body: Center(
+        child: SelectableCodeView(
+          code: containerPadding_code, // Code text
+          language: Language.DART, // Language
+          languageTheme: LanguageTheme.vscodeDark(), // Theme
+          fontSize: 14.0, // Font size
+          withZoom: true, // Enable/Disable zoom icon controls
+          withLinesCount: true, // Enable/Disable line number
+          expanded: true, // Enable/Disable container expansion
+        ),
+      ),
+    );
+  }
+}
